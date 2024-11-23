@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Steve Smith",
+        "country": "Australia",
+        "category": "Batsman",
+        "rating": 85,
+        "battingStyle": "Right-Hand-Bat",
+        "price": 1000000,
+        "image": "/img/steven_smith.webp",
+        "id": 1
+    },
+    {
+        "name": "Adam Zampa",
+        "country": "India",
+        "category": "Bowler",
+        "rating": 90,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 2000000,
+        "image": "/img/jampa.webp",
+        "id": 2
+    },
+    {
+        "name": "Sachin Tendulkar",
+        "country": "India",
+        "category": "All-Rounder",
+        "rating": 98,
+        "battingStyle": "Right-Hand-Bat",
+        "price": 2300000,
+        "image": "/img/sachin.jpeg",
+        "id": 3
+    },
+    {
+        "name": "Joe Root",
+        "country": "England",
+        "category": "Batsman",
+        "rating": 82,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 2500000,
+        "image": "/img/Joe-root-pic.webp",
+        "id": 4
+    },
+    {
+        "name": "Ben Stokes",
+        "country": "England",
+        "category": "All-Rounder",
+        "rating": 88,
+        "battingStyle": "Right-Hand-Bat",
+        "price": 3000000,
+        "image": "/img/ben_stoke.webp",
+        "id": 5
+    },
+    {
+        "name": "Wasim Akram",
+        "country": "Pakistan",
+        "category": "Bowler",
+        "rating": 87,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 2700000,
+        "image": "/img/wasim.jpeg",
+        "id": 6
+    },
+    {
+        "name": "Brian Lara",
+        "country": "West Indies",
+        "category": "Batsman",
+        "rating": 99,
+        "battingStyle": "Right-Hand-Bat",
+        "price": 2000000,
+        "image": "/img/lara.webp",
+        "id": 7
+    },
+    {
+        "name": "Bumrah",
+        "country": "India",
+        "category": "Bowler",
+        "rating": 89,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 3500000,
+        "image": "/img/boomrah.webp",
+        "id": 8
+    },
+    {
+        "name": "Mustafizur Rahman",
+        "country": "Bangladesh",
+        "category": "Bowler",
+        "rating": 95,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 9000000,
+        "image": "/img/mustafizur.jpeg",
+        "id": 9
+    },
+    {
+        "name": "Kumar Sangakkara",
+        "country": "Sri Lanka",
+        "category": "Batsman",
+        "rating": 97,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 9000000,
+        "image": "/img/sangakara.webp",
+        "id": 10
+    },
+    {
+        "name": "Lasith Malinga",
+        "country": "Sri Lanka",
+        "category": "Bowler",
+        "rating": 97,
+        "battingStyle": "Right-Hand-Bat",
+        "price": 5000000,
+        "image": "/img/lasith.jpeg",
+        "id": 11
+    },
+    {
+        "name": "David Warner",
+        "country": "Australia",
+        "category": "Batsman",
+        "rating": 99,
+        "battingStyle": "Left-Hand-Bat",
+        "price": 4000000,
+        "image": "/img/david.png",
+        "id": 12
+    }
+]
