@@ -18,7 +18,7 @@ const MainLayout = () => {
     const githubProvider = new GithubAuthProvider();
     const twitterProvider = new TwitterAuthProvider();
     const handleGoogleLogin = () =>{
-      setLoading(true);
+      setLoading(true); // This will trigger setLoading state
         signInWithPopup(auth, googleProvider)
         // .then(result=>setUser(result.user))
     }
@@ -62,7 +62,7 @@ const MainLayout = () => {
           else{
             setUser(null);
           }
-          setLoading(false);
+          setLoading(false); /* if currentUser value is available this will execute.*/
            
             // if (user) {
             //   // User is signed in, see docs for a list of available properties
