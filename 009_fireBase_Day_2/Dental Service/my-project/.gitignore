@@ -12,9 +12,8 @@ dist
 dist-ssr
 *.local
 
-firebase
-firebase.config.js
-firebase/
+
+
 
 # Editor directories and files
 .vscode/*
@@ -26,4 +25,6 @@ firebase/
 *.njsproj
 *.sln
 *.sw?
-
+.firebase/
+firebase
+firebase.config.js
