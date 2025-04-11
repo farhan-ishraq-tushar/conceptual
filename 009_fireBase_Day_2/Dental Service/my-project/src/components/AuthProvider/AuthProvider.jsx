@@ -14,7 +14,7 @@ export const authContext = createContext();
 const AuthProvider = (p /*step-1: we can use "{route}" */) => {
 
     // keeping user date
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null); 
 
   // email login
   const handleResister = (email, password) => {
@@ -45,7 +45,7 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
     handleLogOut,
     handleResister,
   };
-
+  // Holding stage changed value
   useEffect(()=>{
     const unSubscribe = onAuthStateChanged()
   },[])
