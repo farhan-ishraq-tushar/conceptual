@@ -16,7 +16,7 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
     // keeping user date
     const [user, setUser] = useState(null); 
 
-  // email login
+  // email login and passward
   const handleResister = (email, password) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password);
