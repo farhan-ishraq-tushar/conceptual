@@ -6,6 +6,7 @@ import AllTreatments from "../components/AllTreatments/AllTreatments";
 import MyAppointments from "../components/MyAppointments/MyAppointments";
 import Profile from "../components/Profile/Profile";
 import Details from "../components/Details/Details";
+import Login from "../components/Login.jsx/Login";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
                      return singleData; 
 
                 }
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
             }
         ]
     }

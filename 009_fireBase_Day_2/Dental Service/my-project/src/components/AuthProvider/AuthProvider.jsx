@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
-  getAuth,
+  // getAuth,
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   onAuthStateChanged,
 } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 export const authContext = createContext();
 
@@ -18,24 +19,24 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
 
   // email login and passward
   const handleResister = (email, password) => {
-    const auth = getAuth();
+    // const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password);
   };
 
   const handleLogin = (email, password) => {
-    const auth = getAuth();
+    // const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password);
   };
 
   //   google google login
   const handleGoogleLogin = () => {
     const provider = new GoogleAuthProvider();
-    const auth = getAuth();
+    // const auth = getAuth();
     signInWithPopup(auth, provider);
   };
 
   const handleLogOut = () => {
-    const auth = getAuth();
+    // const auth = getAuth();
     signOut(auth);
   };
 
@@ -47,7 +48,14 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
   };
   // Holding stage changed value
   useEffect(()=>{
-    const unSubscribe = onAuthStateChanged()
+    // const auth = getAuth();
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) =>{
+
+      console.log(currentUser);
+      return () => {
+        unSubscribe()
+      }
+    })
   },[])
 
   return (
