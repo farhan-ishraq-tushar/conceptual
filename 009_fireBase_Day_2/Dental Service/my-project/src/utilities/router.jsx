@@ -7,6 +7,7 @@ import MyAppointments from "../components/MyAppointments/MyAppointments";
 import Profile from "../components/Profile/Profile";
 import Details from "../components/Details/Details";
 import Login from "../components/Login.jsx/Login";
+import Resister from "../components/Resister/Resister";
 
 const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login></Login>
+            },
+            {
+                path: "/resister",
+                element: <Resister></Resister>
             }
         ]
     }

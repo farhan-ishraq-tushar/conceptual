@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { authContext } from '../AuthProvider/AuthProvider';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
     const {handleGoogleLogin} = useContext(authContext)
@@ -7,6 +8,8 @@ const Login = () => {
     return (
         <div>
             <button onClick={handleGoogleLogin}>Google Login</button>
+            <br />
+            <NavLink to="/resister">Resister</NavLink>
         </div>
     );
 };
