@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 const Resister = () => {
+    const {handleResister, } = useContext(authContext)
+
     const handleSubmit = (e) =>{
         e.preventDefault()
         const name = e.target.name.value;
         const image = e.target.image.value;
         const password = e.target.password.value;
         const conPassword = e.target.conPassword.value;
-        console.log(name, image, password, conPassword)
+        const email = e.target.email.value;
+        console.log(name, image, password, conPassword, email)
+
+        handleResister(email, password)
     }
   return (
     <div>
