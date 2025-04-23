@@ -13,19 +13,29 @@ import auth from "../../firebase/firebase.config";
 export const authContext = createContext();
 
 const AuthProvider = (p /*step-1: we can use "{route}" */) => {
-
-    // keeping user date
-    const [user, setUser] = useState(null); 
+  // keeping user date
+  const [user, setUser] = useState(null);
 
   // email login and passward
   const handleResister = (email, password) => {
     // const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password).then((res) =>
+      signOut(auth)
+    );
   };
 
   const handleLogin = (email, password) => {
     // const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   };
 
   //   google google login
@@ -38,6 +48,7 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
   const handleLogOut = () => {
     // const auth = getAuth();
     signOut(auth);
+    return;
   };
 
   const authInfo = {
@@ -47,16 +58,15 @@ const AuthProvider = (p /*step-1: we can use "{route}" */) => {
     handleResister,
   };
   // Holding stage changed value
-  useEffect(()=>{
+  useEffect(() => {
     // const auth = getAuth();
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) =>{
-
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
       return () => {
-        unSubscribe()
-      }
-    })
-  },[])
+        unSubscribe();
+      };
+    });
+  }, []);
 
   return (
     <div>

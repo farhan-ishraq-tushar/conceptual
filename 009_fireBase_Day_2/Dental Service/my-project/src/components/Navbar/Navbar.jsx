@@ -18,6 +18,9 @@ const Navbar = () => {
         <NavLink to="/login">
           <button className="btn btn-primary">Login</button>
         </NavLink>
+        <NavLink to="/resister">
+          <button className="btn btn-secondary ml-2">Resister</button>
+        </NavLink>
       </div>
     </div>
   );
