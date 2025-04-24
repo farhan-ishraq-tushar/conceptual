@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
 
 const Resister = () => {
-  const { handleResister } = useContext(authContext);
+  const { handleResister, manageProfile, handleGoogleLogin } = useContext(authContext);
   const [error, setError] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,12 @@ const Resister = () => {
     const email = e.target.email.value;
     console.log(name, image, password, conPassword, email);
 
-    handleResister(email, password);
+    handleResister(email, password)
+    .then(
+        res => {
+            manageProfile(name, image)
+        }
+    );
   };
   return (
     <div>
@@ -39,6 +44,7 @@ const Resister = () => {
             placeholder="Error"
             className="input input-error"
             name="name"
+            required
           />
         </div>
         <br />
@@ -49,6 +55,7 @@ const Resister = () => {
             placeholder="Error"
             className="input input-error"
             name="image"
+            required
           />
         </div>
         <br />
@@ -59,6 +66,7 @@ const Resister = () => {
             placeholder="Error"
             className="input input-error"
             name="email"
+            required
           />
         </div>
         <br />
@@ -69,6 +77,7 @@ const Resister = () => {
             placeholder="Error"
             className="input input-error"
             name="password"
+            required
           />
         </div>
         <br />
@@ -79,12 +88,15 @@ const Resister = () => {
             placeholder="Error"
             className="input input-error"
             name="conPassword"
+            required
           />
         </div>
 
         <button type="submit" className="btn btn-primary">
           Resister
         </button>
+
+        <button onClick={handleGoogleLogin} className="btn btn-info ml-2">Google</button>
       </form>
       {error ? <p className="text-red-500">{error}</p> : ""}
       {/* if error is available show error  */}

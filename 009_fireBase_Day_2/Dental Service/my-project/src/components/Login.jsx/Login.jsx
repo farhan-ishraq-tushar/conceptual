@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const {handleLogin, handleLogOut} = useContext(authContext);
+    const [error, setError] = useState("")
+    const location = useLocation()
+    console.log(location);
+    const navigate = useNavigate()
   // console.log(contextValue)
 
   const handleSubmit = (e) => {
@@ -15,7 +19,14 @@ const Login = () => {
     const email = e.target.email.value;
     console.log(password, email);
 
-    handleLogin(email, password);
+    handleLogin(email, password)
+    .then(res=>{
+        navigate(location.state.form)
+    })
+    .catch(err=>{
+        console.log(err.message)
+        setError(err.message)
+    })
   };
   return (
     <div>
@@ -81,6 +92,7 @@ const Login = () => {
 
           <button type="submit" onClick={handleLogOut} className="btn btn-secondary ml-2">Logout</button>
         </form>
+        {error && <p className="text-red-500">{error.split("/")[1].slice()}</p>}
       </div>
     </div>
   );
