@@ -22,6 +22,7 @@ const Login = () => {
     handleLogin(email, password)
     .then(res=>{
         navigate(location.state.form)
+        // navigation
     })
     .catch(err=>{
         console.log(err.message)
