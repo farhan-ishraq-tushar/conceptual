@@ -29,7 +29,7 @@ const Details = () => {
           </div>
 
           {/* modal component rendering */}
-          <Modal></Modal>
+          <Modal treatment={treatment}></Modal>
         </div>
       </div>
     </div>

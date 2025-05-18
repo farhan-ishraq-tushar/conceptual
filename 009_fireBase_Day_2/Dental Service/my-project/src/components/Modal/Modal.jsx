@@ -1,10 +1,27 @@
-import React from "react";
+import { info } from "autoprefixer";
+import React, { useContext } from "react";
+import { authContext } from "../AuthProvider/AuthProvider";
 
-const Modal = () => {
+const Modal = ({treatment}) => {
 
+    const {user} = useContext(authContext);
     const handleSubmit = (e) =>{
         e.preventDefault();
         console.log(e)
+        const fname = e.target.Fname.value;
+        const lname = e.target.Lname.value;
+        const email = e.target.email.value;
+         const tr = treatment;
+         const info = {
+          fname, lname, email:user?.email, tr
+         }
+         let saveData = [];
+         const localData = localStorage.getItem('appointments');
+         if(localData){
+          saveData = JSON.parse(localData);
+         }
+         saveData.push(info);
+         localStorage.setItem('appointments', JSON.stringify(saveData));
     }
   
   return (
